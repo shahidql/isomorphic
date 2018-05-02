@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "NODE_ENV=Developement ./node_modules/.bin/babel-cli main.js"
+    "start": "NODE_ENV=Developement ./node_modules/.bin/babel-node main.js"
   },
   "repository": {
     "type": "git",
@@ -26,7 +26,6 @@
   },
   "homepage": "https://github.com/shahidql/reactj-isomorphic#readme",
   "devDependencies": {
-    "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
