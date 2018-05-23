@@ -1,7 +1,7 @@
 import express from 'express';
 import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
-import http from 'http';
+import webpackHotMiddleware from  'webpack-hot-middleware';
 import path from 'path';
 import constants from './constants';
 import configs from '../../webpack.config';
@@ -14,12 +14,13 @@ const compiler = webpack(configs);
 app.use(webpackDevMiddleware(compiler, {
     publicPath: configs.output.publicPath
   }));
-let _port = 8000;
-app.use(express.static('src'))
-app.get('/', (req,res) => {
-    //res.send('Express server response! ====');
-    res.sendFile(constants.ABSPATH+'/src/index.html');
-});
+app.use(webpackHotMiddleware(compiler));
+let _port = 8001;
+// app.use(express.static('src'))
+// app.get('/', (req,res) => {
+//     /////res.send('Express server response! ====');
+//     res.sendFile(constants.ABSPATH+'/src/index.html');
+// });
 app.listen(_port, (req,res) => {
-    console.log('Server started at port %s',_port); // eslint-disable-line no-console
+    console.log('======= Webpack server started at port %s =======',_port); // eslint-disable-line no-console
   });
