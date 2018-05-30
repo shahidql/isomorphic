@@ -1,12 +1,14 @@
 {\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf470
 {\fonttbl\f0\fnil\fcharset0 Menlo-Bold;\f1\fnil\fcharset0 Menlo-Regular;\f2\fnil\fcharset0 Monaco;
-\f3\fswiss\fcharset0 Helvetica-Light;\f4\fswiss\fcharset0 ArialMT;}
+\f3\fswiss\fcharset0 Helvetica-Light;\f4\fswiss\fcharset0 ArialMT;\f5\fnil\fcharset204 PTSans-Regular;
+}
 {\colortbl;\red255\green255\blue255;\red26\green28\blue29;\red244\green244\blue244;\red38\green38\blue38;
 \red11\green96\blue192;\red27\green29\blue31;\red194\green126\blue101;\red23\green23\blue23;\red202\green202\blue202;
+\red37\green36\blue36;\red240\green242\blue230;\red59\green44\blue33;\red57\green55\blue55;\red213\green213\blue213;
 }
 {\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid1\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
 {\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
-\margl1440\margr1440\vieww14920\viewh8400\viewkind0
+\margl1440\margr1440\vieww18400\viewh11820\viewkind0
 \deftab720
 \pard\pardeftab720\sl360\partightenfactor0
 
@@ -30,17 +32,53 @@ npm run
 \f4\fs2 \cf5 \expnd0\expndtw0\kerning0
 down
 \fs30 \cf6 If you want to run ECMAScript 6 features in older version of nodejs, you can use --harmony flag. Latest version of node supports ES6 so no need of --harmony flag\
-\pard\tx220\tx720\pardeftab720\li720\fi-720\sl288\slmult1\partightenfactor0
 \ls1\ilvl0
 \f1\fs24 \cf0 \kerning1\expnd0\expndtw0 {\listtext	4.	}
 \fs22 \CocoaLigature0 node --v8-options | grep "in progress"\
-\pard\tx220\tx720\pardeftab720\li720\fi-720\sl288\slmult1\partightenfactor0
 \ls1\ilvl0
-\fs24 \cf0 \CocoaLigature1 {\listtext	5.	}\cf7 \cb8 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec7 BABEL_CACHE_PATH=./node_modules/.bin/cache/shahid-cache.json \cf9 \cb1 \strokec9 \
-\ls1\ilvl0\cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	6.	}\expnd0\expndtw0\kerning0
+\fs24 \CocoaLigature1 {\listtext	5.	}\cf7 \cb8 \expnd0\expndtw0\kerning0
+BABEL_CACHE_PATH=./node_modules/.bin/cache/shahid-cache.json \cf9 \cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl288\slmult1\partightenfactor0
+\ls1\ilvl0\cf0 \kerning1\expnd0\expndtw0 {\listtext	6.	}\expnd0\expndtw0\kerning0
 \
 \pard\pardeftab720\sl360\partightenfactor0
 \cf0 =======\
-\
+\pard\pardeftab720\sl660\sa200\partightenfactor0
+
+\f5\fs60 \cf10 \cb11 \outl0\strokewidth0 \strokec10 Introduction\
+\pard\pardeftab720\sl400\sa200\partightenfactor0
+
+\fs32 \cf12 \strokec12 The official MongoDB Node.js driver provides both callback-based and Promise-based interaction with MongoDB, allowing applications to take full advantage of the new features in ES6. The 2.x series of the driver is powered by a brand new core driver and BSON library.\
+\pard\pardeftab720\sl660\sa200\partightenfactor0
+
+\fs60 \cf10 \strokec10 Features\
+\pard\pardeftab720\sl500\partightenfactor0
+
+\b\fs36 \cf12 \strokec12 MongoDB Driver\cb1 \
+\pard\pardeftab720\sl440\partightenfactor0
+
+\b0\fs32 \cf12 \cb11 A brand new MongoDB driver for Node.js that keeps compatibility with the 1.4.x driver series, only breaking behavior where the 1.4.x branch had significant problems. The driver also includes support for the shared CRUD API specification and the Server Discovery and Monitoring Specification (SDAM).\cb1 \
+\pard\pardeftab720\sl500\partightenfactor0
+
+\b\fs36 \cf12 \cb11 Core driver\cb1 \
+\pard\pardeftab720\sl440\partightenfactor0
+
+\b0\fs32 \cf12 \cb11 The MongoDB Node.js core driver is the new underpinning for the driver and is meant for framework developers that do not need the helpers and abstractions available in the full driver. This driver is not meant for end users, as it offers none of the conveniences of the higher level APIs\cb1 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf12 \cb11 .\
+\pard\pardeftab720\sl660\sa200\partightenfactor0
+
+\fs60 \cf10 \strokec10 Quick Start\
+\pard\pardeftab720\sl400\sa200\partightenfactor0
+
+\fs32 \cf12 \strokec12 Given that you have created your own project using `npm init` we install the mongodb driver and it's dependencies by executing the following `NPM` command.\
+\pard\pardeftab720\sl380\sa200\partightenfactor0
+
+\f2\fs28 \cf13 \cb14 \strokec13 npm install mongodb --save
+\f5\fs32 \cf12 \cb11 \strokec12 \
+\pard\pardeftab720\sl400\sa200\partightenfactor0
+\cf12 This will download the MongoDB driver and add a dependency entry in your `package.json` file.\
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f1\fs24 \cf0 \cb1 \outl0\strokewidth0 \
 }
