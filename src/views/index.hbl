@@ -1,0 +1,9 @@
+<html>
+<head>
+    <title>{{title}}</title>
+</head>
+<body>
+    <h1>Template rendering in express</h1>
+    <p>Hello, my name is {{name}}. I am a full stack in {{language}}. I have {{experience}} of experience in web development, including hybride mobile app.</p>
+</body>
+</html>

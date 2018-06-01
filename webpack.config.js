@@ -1,6 +1,6 @@
 import webpack from 'webpack';
 import path from 'path';
-import constants from './webpack/server/constants';
+import constants from './constants';
 
 export default {
     mode: 'development',
@@ -9,13 +9,13 @@ export default {
         shahid0: [ 
             path.join(constants.SRC_Dir,'h.1.js'), 
             path.join(constants.SRC_Dir,'h.2.js'), 
-            'webpack-hot-middleware/client?path=http://localhost:8000/__webpack_hmr&reload=true'    
+            `webpack-hot-middleware/client?path=http://localhost:${constants.HOT_PORT}/__webpack_hmr&reload=true`
         ]
     },
     output:{
         path: path.resolve(__dirname, 'dist'), 
         filename: '[name].js',
-        publicPath: '/dist'
+        publicPath: 'http://localhost:'+constants.HOT_PORT+'/dist/'
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
