@@ -14,7 +14,7 @@
     "webpack-server": "./node_modules/.bin/nodemon webpack/server/main.js --exec node_modules/.bin/babel-node",
     "dev-server": "./node_modules/.bin/nodemon src/server/main.js --exec node_modules/.bin/babel-node",
     "dev-server-with-harmony":"./node_modules/.bin/nodemon --use-strict --harmony src/server",
-    "start-server": "npm-run-all -p set-environment webpack-server dev-server"
+    "start-server": "npm-run-all -p set-environment webpack-server dev-server-with-harmony"
   },
   "repository": {
     "type": "git",

@@ -4,7 +4,7 @@ import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from  'webpack-hot-middleware';
 import path from 'path';
 import constants from '../../constants';
-import configs from '../../webpack.config';
+import configs from '../webpack.config';
 //import getconfig from 'getconfig';
 
 const app = express();
