@@ -1,0 +1,129 @@
+.m-desktop,.m-mobile{
+    display: none;
+}
+.m-content{
+    background: #fafafa;
+    max-width: 850px;
+    margin: 0 auto;
+    font-family: Georgia,Cambria,Times New Roman,Times,serif;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.45;
+}
+.m-content h4{
+    font-family: Merriweather Sans,Helvetica,Roboto,Arial,sans-serif;
+    font-size:.95rem;
+    letter-spacing: -.018em;
+    line-height: 1.25;
+    font-weight: 800;
+    margin: 0;
+    padding: 1.4rem 0;
+}
+.m-content .m-title{
+    font-size: 1.4rem;
+}
+.m-content img{
+    margin-bottom: 1.8rem;
+    max-width: 100%;
+}
+.m-content p{
+    margin:0 0 1rem;
+}
+.m-content p a{
+    color: #0065a4;
+    text-decoration: none;
+}
+.m-header{
+    border-bottom:1px solid #ccc;
+}
+.m-header span{
+    position: relative;
+}
+.m-header .m-button{
+    position: absolute;
+    left: 45px;
+    bottom: 105px;
+}
+.m-group{
+    overflow: hidden;
+}
+.m-group>div{
+    text-align: center;
+    float:left;
+    width:33.333333333%;
+}
+.m-group>div>div{
+    background: #fff;
+    padding: 18px;
+    margin-right:20px;
+    min-height: 418px;
+}
+.m-group img{
+    margin: 20px 0;
+}
+.m-group h4{
+    padding:0 0 1rem;
+}
+.m-group>div:last-child>div{
+    margin-right:0;
+}
+.m-group>div:last-child img{
+    margin-top: 16px;
+}
+.m-group>div:nth-child(2) img{
+    margin-top: -2px;
+}
+.m-bottom{
+    text-align: center;
+}
+.m-button{
+    color: #fff;
+    background: #0065a4;
+    padding: 12px 25px;
+    font-size: 19px;
+    font-family: Merriweather Sans,Helvetica,Roboto,Arial,sans-serif;
+    text-decoration: none;
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    letter-spacing: 1.2px;
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+}
+@media only screen and (min-width:728px){
+    .m-desktop{display: block}
+    .m-mobile{display: none}
+}
+@media only screen and (min-width:727px) and (max-width:865px){
+    .m-group>div>div{
+        min-height:463px;
+    }
+}
+@media only screen and (max-width:727px){
+    .m-desktop{display: none}
+    .m-mobile{display: block}
+    .m-header .m-button{
+        margin-bottom:1.5rem;
+    }
+    .m-content img{
+        margin-bottom:1.6rem;
+    }
+    .m-button,
+    .m-header .m-button{
+        padding-left:0;
+        padding-right:0;
+        position: static;
+        width: 100%;
+    }
+    .m-group>div{
+        float: unset;
+        width: unset;
+        margin-bottom: 20px;
+        min-height: unset;
+    }
+    .m-group>div>div{
+        min-height: unset;
+        margin-right: 0;
+    }
+}

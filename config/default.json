@@ -1,5 +1,5 @@
 {
   "port": 8000,
   "wpport": 8001,
-  "memcache": 8003
+  "memcache": 11211
 }
