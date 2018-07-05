@@ -3,6 +3,11 @@
     <title></title>
 </head>
 <body>
+
+    <head>
+        <link rel="import" href="https://s3.ca-central-1.amazonaws.com/shahid-bucket-demo/index2.html">
+    </head>
+
     <style>
         .m-desktop,.m-mobile{
             display: none;
@@ -175,7 +180,7 @@
                 Journalism means we investigate. Justice demands we advocate. All of this comes at a cost.
             </p>
             <p>
-                <strong>Register now for free, complete access to thestar.com, for a limited time.</strong> Later, we will be introducing paid digital subscription. It's a way for you to support the Star's necessary empowerment of the truth. A way for you to stand beside us as, together, we stand up for your city.
+                <strong>Register now for free and get limited time, full access to thestar.com.</strong> Later, your continued access will require a paid subscription. It's a way for you to support the Star's necessary empowerment of the truth. A way for you to stand beside us as, together, we stand up for your city.
             </p>
             <p>
                 Wherever you are, whenever you need us, we're here.
@@ -217,6 +222,11 @@
         </div>
     </div>
     <script>
+
+            var con = document.querySelector('link[rel="import"]');
+            var dc = con.import;
+            console.log(dc);
+
     setInterval(function() {
         window.top.postMessage({'resize':{'iframe':'registration','height': document.body.scrollHeight}}, "*");
     }, 500);

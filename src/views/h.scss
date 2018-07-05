@@ -1,0 +1,9 @@
+body{
+    div{
+        color:blue;
+        font-size:29px;
+        &.abc{
+            color:red;
+        }
+    }
+}
