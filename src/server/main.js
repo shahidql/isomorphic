@@ -2,6 +2,7 @@ import express from 'express';
 import engine from 'consolidate';
 import constants from '../../constants';
 import cache from './lib/cache';
+import path from 'path';
 //import { INSPECT_MAX_BYTES } from 'buffer';
 
 const app = express();
@@ -33,16 +34,17 @@ const _cache = new cache({
     memcached: `localhost:${constants.CACHEPORT}`
 });
 
-
-
 router.get('/' ,(req,res) => {
     res.render('index',{
         title: 'Home',
         name: 'Shahid',
         experience: '-',
         language: '-'
-    });
-    //res.sendFile(constants.ABSPATH+'/src/index.html');
+    })
+});
+router.get('/css/*.(css|min.css)',(req,res) => {
+    res.sendFile(path.join(__dirname,'../../src/views/h.scss'));
+    //res.sendFile(constants.ABSPATH+'/src/views/h.scss');
 });
 router.get('/events/:tag([A-Za-z-]+)', (req,res) => {
     //events/hello-test

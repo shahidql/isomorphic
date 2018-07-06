@@ -1,0 +1,83 @@
+@import '../global';
+
+$account-bar-grey: #f3f3f3;
+$account-bar-height-small: 64px;
+$account-bar-height-medium: 76px;
+$account-bar-height-large: 76px;
+
+
+.account-bar {
+  height: 0;
+
+  &.show {
+    .account-bar__wrap {
+      height: $account-bar-height-small;
+
+      @media #{$medium-only} {
+        height: $account-bar-height-medium;
+      }
+
+      @media #{$large-up} {
+        height: $account-bar-height-large;
+      }
+    }
+
+    .container-fluid {
+      transform: translate(0, 0);
+    }
+  }
+
+  &.animate {
+    .container-fluid {
+      transition: transform 0.4s ease-in-out;
+    }
+  }
+
+  .account-bar__wrap {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.4s ease-in-out;
+    @media #{$large-up} {
+      max-width: rem-calc(1086);
+      margin: 0 auto;
+      position: relative;
+    }
+
+  }
+
+  .account-dropdown {
+    @media #{$large-up} {
+      border-bottom: 0;
+    }
+    border-bottom: 1px solid #eff1f2;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    font-size: 16px;
+  }
+
+  .container-fluid {
+    background-color: #fff;
+    border-bottom: 1px solid $colour-gray-light;
+    transform: translate(0, -100%);
+
+
+    height: $account-bar-height-small;
+
+    @media #{$medium-only} {
+      height: $account-bar-height-medium;
+    }
+
+    @media #{$large-up} {
+      height: $account-bar-height-large;
+      position: absolute;
+      right: 0;
+      width: 200px;
+      border-left: 1px solid #eff1f2;
+      border-right: 1px solid #eff1f2;
+    }
+  }
+
+  .container-fluid .row {
+    text-align: center;
+  }
+}
