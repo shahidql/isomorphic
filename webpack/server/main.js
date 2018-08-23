@@ -22,6 +22,6 @@ app.use(webpackHotMiddleware(compiler));
 //     /////res.send('Express server response! ====');
 //     res.sendFile(constants.ABSPATH+'/src/index.html');
 // });
-app.listen(constants.PORT, (req,res) => {
-    console.log('======= Webpack server started at port %s =======',constants.PORT); // eslint-disable-line no-console
+app.listen(constants.HOT_PORT, (req,res) => {
+    console.log(`=== Webpack Server started at http://localhost:${constants.HOT_PORT} ===`); // eslint-disable-line no-console
   });

@@ -1,30 +1,32 @@
-import webpack from 'webpack';
 //import SassPlugin from 'sass-webpack-plugin';
-//import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import path from 'path';
 import constants from '../constants';
 const isDevelopment = process.env.NODE_ENV !== 'production'
-
+const babelLoader = require.resolve('babel-loader');
+import webpack from 'webpack';
+const getconfig = require('getconfig');
 
 export default {
     mode: 'development',
     devtool: 'inline-source-map',
     entry: {
-        shahid0: [ 
-            path.join(constants.SRC_Dir,'h.1.js'), 
-            path.join(constants.SRC_Dir,'h.2.js'), 
-            `webpack-hot-middleware/client?path=http://localhost:${constants.HOT_PORT}/__webpack_hmr&reload=true`
+        app0: [ 
+            path.join(constants.SRC_Dir,'client/main.js'),
+            //path.join(constants.SRC_Dir,'h.1.js'), 
+            //path.join(constants.SRC_Dir,'h.2.js'), 
+            `webpack-hot-middleware/client?path=http://localhost:${constants.PORT}/__webpack_hmr&reload=true`
         ],
         css0:[
-            path.join(constants.SRC_Dir,'views/h.scss'),
+            //path.join(constants.SRC_Dir,'views/h.scss'),
             path.join(constants.SRC_Dir,'views/l.scss')
         ]
     },
     module:{
         rules: [
             {
-                test: /\.(sc|c)ss$/,
+                test: /\.(c|sc)ss$/,
                 use: [
                   {
                     loader: isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
@@ -38,11 +40,9 @@ export default {
                 ]
             },
             {
-                test: /\.js$/,
+                test: /\.(js|jsx)$/,
                 exclude: /(node_modules|bower_components)/,
-                use:{
-                    loader: 'babel-loader' 
-                }
+                loader: 'babel-loader'
             }
         ]
     },
@@ -64,11 +64,15 @@ export default {
         }
         return plugins;
     })(),
-    output:{
+    output: isDevelopment ? {
         path: path.resolve(__dirname, 'dist'), 
         filename: function(name){
             return '[name].js';
         },
         publicPath: 'http://localhost:'+constants.HOT_PORT+'/dist/'
+    } : {
+        path: path.resolve(__dirname, 'dist'),
+        filename: '[name].js',
+        chunkFilename: '[name]-[chunkhash].js'
     }
 }

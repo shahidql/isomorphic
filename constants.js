@@ -1,5 +1,5 @@
 import path from 'path';
-import getconfig from 'getconfig';
+const getconfig = require('getconfig');
 const ABS = path.normalize(path.join(__dirname,'/'));
 
 export default Object.freeze({

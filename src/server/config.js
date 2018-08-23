@@ -1,0 +1,1 @@
+import getconfig from 'getconfig';
